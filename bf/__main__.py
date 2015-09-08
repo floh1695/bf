@@ -1,6 +1,7 @@
 #!/usr/bin/python2
 
 from sys import argv
+from sys import stdin
 from sys import stdout
 
 from index import Index
@@ -39,7 +40,7 @@ def interpret(tokens, memory):
         elif token.get_token() is Token.OUTPUT:
             stdout.write(str(memory[memory_index]))
         elif token.get_token() is Token.INPUT:
-            pass #TODO: I'm currently too lazy to add this one
+            memory[memory_index].set_value(ord(stdin.read(1)))
         elif token.get_token() is Token.BEGIN:
             pass
         elif token.get_token() is Token.END:
