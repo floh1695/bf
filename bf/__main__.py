@@ -2,10 +2,10 @@
 
 from sys import argv
 
-from index     import Index
+from index import Index
 from interpret import interpret
-from token     import Token
-from token     import build_tokens
+from token import Token
+from token import build_tokens
 
 def init_tokens(files):
     tokens = []
