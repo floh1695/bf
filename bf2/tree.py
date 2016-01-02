@@ -8,7 +8,7 @@ class Node:
         self.node_next = None
 
     def get_parent(self):
-        return self.node_parent
+        return self.get_head().node_parent
 
     def get_child(self):
         return self.node_child
@@ -19,12 +19,13 @@ class Node:
     def get_last(self):
         return self.node_last
 
-    def set_parent(self, node_parent):
-        pass
-
 # If I added this I don't think it will ever be useful
-#    def set_child(self, node_child):
+#    def set_parent(self, node_parent):
 #        pass
+
+    def set_child(self, node_child):
+        self.node_child = node_child
+        node_child.node_parent = self
 
     def set_next(self, node_next):
         self.node_next = node_next
